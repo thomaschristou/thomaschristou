@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600;800&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0px;
+    background-color: transparent;
+}
+
+
+
+.a1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    
+    color: #FFFFFF;
+    text-decoration: underline transparent;
+}
+
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, rgba(42, 42, 42, 0.87) 0%, rgba(217, 217, 217, 0) 100%);
+
+}
+
+
+.nav_links li{
+    display: inline-block;
+    padding: 30px 40px;
+
+}
+
+.nav_links li a {
+    transition: all 0.5s;
+    width: 100%;
+    border-width: 0 0 3px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+
+
+.nav_links li a:hover {
+
+    border-color: #42A6A0;
+}
+
+.dropdown {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dropdown li{
+    padding: 30px 10px;
+    background-color: #E4E0DC;
+
+}
+
+.dropdown li a {
+    transition: all 0.5s;
+    width: 100%;
+    border-width: 0 0 3px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+
+
+.dropdown li a:hover {
+
+    border-color: #42A6A0;
+}
+
+.allcontent{
+    height: 100vh;
+    width:  100vw;
+    background-image: linear-gradient( #313131, #0977B6);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    height: fit-content;
+}
+.container1{
+    min-width: 1000px;
+    max-width: 1000px;
+    min-height: 400px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    display: flex;
+    justify-content: start;
+}
+
+
+
+
+
+.container2{
+    width:60%;
+    padding-top: 80px;
+    padding-left: 20px;
+    border-radius: 40px;
+}
+
+.imagecontainer{
+    max-width: 40%;
+    min-width: 40%;
+    min-height: 400px;
+    max-height:400px;
+    border-radius: 40px;
+}
+.textone{
+    font-family: 'Montserrat';
+    font-style: bold;
+    font-weight: 600;
+    font-size: 17px;
+
+    color: #000000;
+
+}
+.name{
+    font-family: 'Montserrat';font-weight:800;
+    
+    font-size: 50px;
+
+    background: linear-gradient(180deg, #000000 0%, rgba(20, 5, 192, 0.636779) 75%, rgba(246, 246, 246, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.name:hover{
+    background: linear-gradient(180deg, #000000 0%, rgba(241, 19, 19, 0.637) 75%, rgba(246, 246, 246, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    animation:horizontal-shaking 0.25s ease-in forwards infinite alternate;
+}
+
+@keyframes horizontal-shaking {
+    0% { 
+        transform: translate(0, 0);
+    }
+    25% { 
+        transform: translate(2px,2px); 
+    }
+    50% { 
+        transform: translate(0px,-2px); 
+    }
+    75% { 
+        transform: translate(2px,0px);
+    }
+    100% { 
+        transform: translate(0,0); 
+    }
+   }
+
+.meimage{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 400px;
+    max-height:400px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.socialcontainer{
+    display: flex;
+    justify-content: left;
+    
+}
+.linkedin{
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 240px;
+    height: 40px;
+    background: #0977B6;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+.github{
+    margin-top: 10px;
+    width: 240px;
+    height: 40px;
+    background: #1B1F23;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.github:hover{
+    background: #E4E0DC;
+    border-color: #E4E0DC;
+    color:#E4E0DC;
+    border-style: solid;
+}
+.github:hover .iconname{ 
+    color:#1B1F23;
+}
+
+.github:hover .icon{ 
+    filter: invert(1);
+}
+
+.linkedin:hover{
+    background: #040204;
+    border-color: #040204;
+    color:#040204;
+    border-style: solid;
+}
+
+.icon{
+    width:20%;
+    height:40px;
+    border-radius: inherit;
+    margin-right:10px;
+    object-fit: cover;
+}
+.iconname{
+    color:white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    width:80%;
+    color: #FFFFFF;
+
+}
+
+.projbut{
+    margin-top: 10px;
+    width: 170px;
+    height: 50px;
+    background: #60BFE8;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.contbut{
+    margin-top: 10px;
+    width: 170px;
+    height: 50px;
+    background: #3A7B97;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.CVbut{
+    margin-top: 10px;
+    width: 170px;
+    height: 50px;
+    background: #1C3945;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.allcontent2{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(  #0977B6,#313131);
+}
+
+.eldis{
+    display: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    
+    color: #FFFFFF;
+    text-decoration: underline transparent;
+}
+
+@media screen and (max-width: 1000px) {
+    .container1 {
+        min-width: 700px;
+        max-width: 700px;
+    }
+    .name{
+        font-size: 40px;
+
+    }
+    .textone{
+      font-size: 14px;
+    }
+    .iconname{
+        font-size: 13px;
+
+    }
+    .icon{
+        width:25%;
+    }
+    .linkedin{
+        width: 180px;
+    }
+    .github{
+        width: 180px;
+
+    }
+    .CVbut, .contbut, .projbut{
+        width:30%;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        background-image: linear-gradient(180deg, rgba(42, 42, 42, 0.87) 0%, rgba(217, 217, 217, 0) 100%);
+        
+            
+        
+    }
+    .eldis{
+        display: flex;
+    }
+    .nav_links{
+        display: none;
+    }
+    
+  }
+  @media screen and (min-width: 1001px) {
+    .dropdown{
+        display: none;}
+}
+
+@media screen and (max-width: 700px) {
+    .container1 {
+        min-width: 450px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        min-height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .name{
+        font-size: 45px;
+
+    }
+    .container2{
+        min-width: 100%;
+        height: fit-content;
+        padding-bottom: 30px;
+    }
+    .imagecontainer{
+        min-width: 80%;
+        padding-bottom: 15px;
+    }
+    .allcontent{
+        height: 200vh;
+    }
+}

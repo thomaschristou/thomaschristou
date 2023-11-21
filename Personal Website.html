@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PersonalWebsite.css">
+    <title>Thomas Christou</title>
+</head>
+<body>
+    <div class="allcontent">
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <li><a class="a1" href="#home">Home</a></li>
+                <li><a class="a1" href="#AboutMe">About Me</a></li>
+                <li><a class="a1" href="">Contact Me</a></li>
+                <li><a class="a1" href="CV/Thomas Christou CV.pdf">CV PDF</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+    <div class="content">
+        <div class="container1">
+            <div class="container2">
+                <div class="textone">Business Intelligence Engineer Intern at Amazon</div>
+                <div class="socialcontainer">
+                    <div class="name">T</div>
+                    <div class="name">h</div>
+                    <div class="name">o</div>
+                    <div class="name">m</div>
+                    <div class="name">a</div>
+                    <div class="name">s</div>
+                    <div class="name">&nbsp</div>
+                    <div class="name">C</div>
+                    <div class="name">h</div>
+                    <div class="name">r</div>
+                    <div class="name">i</div>
+                    <div class="name">s</div>
+                    <div class="name">t</div>
+                    <div class="name">o</div>
+                    <div class="name">u</div>
+            </div>
+                
+                <div class="textone">Second Year Student at Loughborough University Studying</div>
+                <div class="textone">Computer Science and Artificial Intelligence BSC</div>
+                <div class="socialcontainer">
+                    <a href="https://www.linkedin.com/in/thomas-christou-91aaa1168/">
+                    <div id="linkedinbutton"class="linkedin">
+                        <img id="linkedin" class="icon" src="linkedin.png"></img>
+                         <div  class="iconname">@Thomas Christou</div>
+                    </div>
+                    <a href="https://github.com/thomaschristou">
+                    <div class="github">
+                        <img class="icon" src="Gitimg.png"></img>
+                        <div class="iconname ">@thomaschristou</div>
+                    </div>
+                </a>
+                </div>
+                <div class="socialcontainer">
+                <a  href="#AboutMe"class="projbut"><div class="iconname">See my Projects</div></a>
+                <a class="contbut" href="#AboutMe"><div class="iconname">Contact me</div></a>
+                <a class="CVbut" href="CV/Thomas Christou CV.pdf"><div class="iconname">Click for CV pdf</div></a>
+                </div>
+            </div>
+            
+            <div class="imagecontainer" >
+                <img src="me.jpeg" alt="noimage" class="meimage">
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+    <section id="AboutMe">
+    <div class="allcontent2">
+        <div class="content2">
+            <div class="aboutmecont">
+                    <img src="me.jpeg" alt="noimage" class="meimage2">
+                    <div class="container3">
+                    <div class="texttwo">About me</div>
+                    <div class="textone">
+                        I am a hardworking, driven, and open-minded individual 
+                        with an ongoing passion for technology and data. I work currently as a student studying BSC Computer Science and Artificial Intelligence 
+                        at Loughborough University with a goal to pursue a tech based career.
+                        <br><br>I have secured a placement at Amazon as a Business Intelligence Engineer where I..
+                    </div>
+                </div>
+       </div></div>
+       <div class="content3">
+       <div class="projectcontent">
+       
+        <div class="texttwo" style="color: white;">Projects</div> 
+        
+        <div class="projectcontainer">
+            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
+            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
+            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
+            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
+        </div>
+       </div></div>
+
+
+       <div class="content3">
+        <div class="projectcontent">
+        
+         <div class="texttwo" style="color: white;">Education</div> 
+         
+         <div class="projectcontainer">
+             <div class="edubutton"><div class="iconname">Loughborough University</div></div>
+             <div class="edubutton"><div class="iconname">Dartford Grammar School</div></div>
+             <div class="edubutton"><div class="iconname">Wilmington Grammar School</div></div>
+         </div>
+        </div></div>
+    </div>
+    </section>
+</body>
+<script>
+    var button = document.getElementById("linkedinbutton");
+
+//Now, we need to add an Event Listener to listen when the image gets mouse over.
+
+    button.addEventListener('mouseover', function(){
+        var image = document.getElementById('linkedin');
+        image.src = "linkedin2.jpg"
+        
+    })
+    button.addEventListener('mouseout', function(){
+        var image = document.getElementById('linkedin');
+        image.src = "linkedin.png"
+        
+    })
+    
+</script>
+</html>
