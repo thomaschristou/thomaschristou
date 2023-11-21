@@ -16,7 +16,6 @@
                 <li><a class="a1" href="#AboutMe">About Me</a></li>
                 <li><a class="a1" href="">Contact Me</a></li>
                 <li><a class="a1" href="CV/Thomas Christou CV.pdf">CV PDF</a></li>
-    
             </ul>
         </nav>
     </header>
@@ -41,8 +40,7 @@
                     <div class="name">t</div>
                     <div class="name">o</div>
                     <div class="name">u</div>
-            </div>
-                
+            </div>       
                 <div class="textone">Second Year Student at Loughborough University Studying</div>
                 <div class="textone">Computer Science and Artificial Intelligence BSC</div>
                 <div class="socialcontainer">
@@ -63,8 +61,7 @@
                 <a class="contbut" href="#AboutMe"><div class="iconname">Contact me</div></a>
                 <a class="CVbut" href="CV/Thomas Christou CV.pdf"><div class="iconname">Click for CV pdf</div></a>
                 </div>
-            </div>
-            
+            </div>  
             <div class="imagecontainer" >
                 <img src="me.jpeg" alt="noimage" class="meimage">
             </div>
@@ -88,10 +85,8 @@
                 </div>
        </div></div>
        <div class="content3">
-       <div class="projectcontent">
-       
-        <div class="texttwo" style="color: white;">Projects</div> 
-        
+       <div class="projectcontent">  
+        <div class="texttwo" style="color: white;">Projects</div>  
         <div class="projectcontainer">
             <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
             <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
@@ -99,13 +94,9 @@
             <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
         </div>
        </div></div>
-
-
        <div class="content3">
-        <div class="projectcontent">
-        
-         <div class="texttwo" style="color: white;">Education</div> 
-         
+        <div class="projectcontent">        
+         <div class="texttwo" style="color: white;">Education</div>         
          <div class="projectcontainer">
              <div class="edubutton"><div class="iconname">Loughborough University</div></div>
              <div class="edubutton"><div class="iconname">Dartford Grammar School</div></div>
@@ -117,19 +108,13 @@
 </body>
 <script>
     var button = document.getElementById("linkedinbutton");
-
-//Now, we need to add an Event Listener to listen when the image gets mouse over.
-
     button.addEventListener('mouseover', function(){
         var image = document.getElementById('linkedin');
         image.src = "linkedin2.jpg"
-        
-    })
+            })
     button.addEventListener('mouseout', function(){
         var image = document.getElementById('linkedin');
-        image.src = "linkedin.png"
-        
+        image.src = "linkedin.png"   
     })
-    
 </script>
 </html>
