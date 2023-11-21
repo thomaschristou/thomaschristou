@@ -14,7 +14,7 @@
                 <li><a class="a1" href="#home">Home</a></li>
                 <li><a class="a1" href="#AboutMe">About Me</a></li>
                 <li><a class="a1" href="">Contact Me</a></li>
-                <li><a class="a1" href="CV/Thomas Christou CV.pdf">CV PDF</a></li>
+                <li><a class="a1" href="This is a Regulation Document.pdf">CV PDF</a></li>
             </ul>
         </nav>
     </header>
