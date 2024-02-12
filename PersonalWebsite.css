@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600;800&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 
 
 *{
@@ -8,7 +11,15 @@
     background-color: transparent;
 }
 
-
+.a2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    
+    color: #212121;
+    text-decoration: underline transparent;
+}
 
 .a1{
     font-family: 'Montserrat';
@@ -20,7 +31,6 @@
     text-decoration: underline transparent;
 }
 
-
 .nav_links {
     list-style: none;
     display: flex;
@@ -30,10 +40,31 @@
 
 }
 
+.aboutme_links {
+    list-style: none;
+    display: flex;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the nav appears above other content */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Add shadow for better visibility */
+}
 
 .nav_links li{
     display: inline-block;
-    padding: 30px 40px;
+    padding: 30px;
 
 }
 
@@ -82,8 +113,10 @@
 }
 
 .allcontent{
-    height: 100vh;
-    width:  100vw;
+    
+    width:  100%;
+    padding-top: 20vh;
+    padding-bottom: 30vh;
     background-image: linear-gradient( #313131, #0977B6);
 }
 
@@ -93,6 +126,27 @@
     align-items: center;   
     height: fit-content;
 }
+
+.education-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    height: fit-content;
+}
+
+.education-container{
+    min-width: 1000px;
+    max-width: 1000px;
+    min-height: 400px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    display: flex;
+    justify-content: start;
+    margin: 10vh;
+}
+
+
 .container1{
     min-width: 1000px;
     max-width: 1000px;
@@ -102,6 +156,7 @@
     border-radius: 40px;
     display: flex;
     justify-content: start;
+    margin: 10vh;
 }
 
 
@@ -114,6 +169,14 @@
     padding-left: 20px;
     border-radius: 40px;
 }
+
+.container4{
+    width:60%;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 40px;
+}
+
 
 .imagecontainer{
     max-width: 40%;
@@ -208,10 +271,12 @@ a{
     align-items: center;
 }
 .github:hover{
+    margin-top: 10px;
+    width: 240px;
+    height: 40px;
     background: #E4E0DC;
     border-color: #E4E0DC;
     color:#E4E0DC;
-    border-style: solid;
 }
 .github:hover .iconname{ 
     color:#1B1F23;
@@ -222,10 +287,14 @@ a{
 }
 
 .linkedin:hover{
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 240px;
+    height: 40px;
     background: #040204;
     border-color: #040204;
     color:#040204;
-    border-style: solid;
+    border-radius: 15px;
 }
 
 .icon{
@@ -298,7 +367,40 @@ a{
     color: #FFFFFF;
     text-decoration: underline transparent;
 }
-
+.InputContainer {
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom,rgb(84, 149, 160),rgb(35, 19, 124));
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  }
+  
+  .a5 {
+    width: 180px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color: #212121;
+    border-radius: 30px;
+    padding: 10px;
+    color: rgb(19, 19, 19);
+    font-size: 13.4px;
+    
+    font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      
+      color: #FFFFFF;
+      text-decoration: underline transparent;
+  }
+  
 @media screen and (max-width: 1000px) {
     .container1 {
         min-width: 700px;
@@ -310,6 +412,7 @@ a{
     }
     .textone{
       font-size: 14px;
+      color: #212121;
     }
     .iconname{
         font-size: 13px;
@@ -377,3 +480,61 @@ a{
         height: 200vh;
     }
 }
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 2px 2px #0977B6;
+    
+    margin-bottom: 5vh;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px; 
+    transform: scaleY(-1);
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: #212121;
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .button::before {
+    position: absolute;
+    bottom: 20px;
+    content: "Go To About Me";
+    color: #FFFFFF;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
