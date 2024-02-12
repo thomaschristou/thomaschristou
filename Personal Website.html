@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="PersonalWebsite.css">
-    <title>Thomas eg Christou</title>
+    <title>Thomas Christou</title>
+    <link rel="icon" type="png" href="Christou.png">
 </head>
 <body>
     <div class="allcontent">
@@ -15,7 +16,7 @@
                 <li><a class="a1" href="#home">Home</a></li>
                 <li><a class="a1" href="#AboutMe">About Me</a></li>
                 <li><a class="a1" href="">Contact Me</a></li>
-                <li><a class="a1" href="CV/Thomas Christou CV.pdf">CV PDF</a></li>
+                <li><a class="a1" href="Thomas Christou CV.pdf">CV PDF</a></li>
     
             </ul>
         </nav>
@@ -70,54 +71,84 @@
             </div>
         </div>
     </div>
-    </div>
     </section>
-    <section id="AboutMe">
-    <div class="allcontent2">
-        <div class="content2">
-            <div class="aboutmecont">
-                    <img src="me.jpeg" alt="noimage" class="meimage2">
-                    <div class="container3">
-                    <div class="texttwo">About me</div>
-                    <div class="textone">
-                        I am a hardworking, driven, and open-minded individual 
-                        with an ongoing passion for technology and data. I work currently as a student studying BSC Computer Science and Artificial Intelligence 
-                        at Loughborough University with a goal to pursue a tech based career.
-                        <br><br>I have secured a placement at Amazon as a Business Intelligence Engineer where I..
-                    </div>
-                </div>
-       </div></div>
-       <div class="content3">
-       <div class="projectcontent">
-       
-        <div class="texttwo" style="color: white;">Projects</div> 
-        
-        <div class="projectcontainer">
-            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
-            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
-            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
-            <div class="aproject"><div class="iconname">Make-It-All Website</div></div>
+    
+    <div class="education-content">
+    <button class="button" id="Arrow" >
+        <svg class="svgIcon" viewBox="0 0 384 512">
+          <path
+            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+          ></path>
+        </svg>
+      </button>
+      </div>
+      
+      <section id="AboutMe" style="padding-top: 10vh;">
+        <div class="content">
+        <ul class="aboutme_links"> 
+        <li>
+        <div class="InputContainer">
+        <a class="a5" style="padding-right:10px" onclick="showSection('education')">Education</a>
         </div>
-       </div></div>
-
-
-       <div class="content3">
-        <div class="projectcontent">
+        </li>
+        <li>
+        <div class="InputContainer">
+        <a class="a5" style="padding-right:10px" onclick="showSection('workProjects')">Work Projects</a></div></li>
+        <li>
+        <div class="InputContainer">
+        <a class="a5" style="padding-right:10px"  onclick="showSection('personalProjects')">Personal Projects</a></div></li>
+        </ul>
+</div>
+                 
+        <div class="content">
+            
+            <div class="container1">
+                <div class="container4">
+                    
+                    <section id="educationSection" style="display: none;">
+                            <h4>Education</h4>
+                            <h5>Loughborough University- Computer Science and AI Bachelor’s degree – Concludes in 2025</h5>
+                            <ul>
+                            <li>Introduction to algorithms: 87%;</li>
+                            <li>Computer Systems: 86%;</li>
+                            <li>Functional Programming (Haskell): 85%;</li>
+                            <li>Web Programming (HTML/CSS/JS/PHP/SQL ): 83%;</li>
+                            <li>Object Orientated Programming (Java): 82%;</li>
+                            <li>Introduction to Programming (Python): 81%;</li>
+                            <li>Logic for Computer Science: 80%;</li>
+                            <li>Team Projects (HTML/CSS/JS/PHP/SQL ): 73%</li>
+                            <li>Embedded Systems Programming (C++): 73%;</li>
+                            <li>Software Engineering: 71%;</li>
+                            <li>Mathematics for Computer Science: 70%;</li>
+                            <li>Databases: 66%;</li>
+                            </ul>
+                            <h5>Dartford Grammar School for Girls (Sixth form)</h5>
+                            <p>3 A-Levels in Maths, Computer Science and Economics (Grades A,A,B) B Grade in EPQ about GDPR/Data (“Is GDPR sufficient in protecting personal data from harvested by companies?”)</p>
+                            <h5>Wilmington Grammar School for Boys (Secondary School)</h5>
+                            <p>10 G.C.S.E.s (3 Grade A*, 4 Grade A, 1 Grade B and 1 Grade C).</p>
+                        </p>
+                    </section>
+                    
+                    <section id="workProjectsSection" style="display: none;">
+                        <h4>Work Projects</h4>
+                    </section>
+                    
+                    <section id="personalProjectsSection" style="display: none;">
+                        <h4>Personal Projects</h4>
+                        <p>This is about my personal projects</p>
+                    </section>
+                </div>
+       
+            </div>
+            
+        </div>
         
-         <div class="texttwo" style="color: white;">Education</div> 
-         
-         <div class="projectcontainer">
-             <div class="edubutton"><div class="iconname">Loughborough University</div></div>
-             <div class="edubutton"><div class="iconname">Dartford Grammar School</div></div>
-             <div class="edubutton"><div class="iconname">Wilmington Grammar School</div></div>
-         </div>
-        </div></div>
-    </div>
     </section>
+    
+    
 </body>
 <script>
-    var button = document.getElementById("linkedinbutton");
-
+    var button = document.getElementById("linkedinbutton"); 
 //Now, we need to add an Event Listener to listen when the image gets mouse over.
 
     button.addEventListener('mouseover', function(){
@@ -131,5 +162,23 @@
         
     })
     
+    var arrow = document.getElementById("Arrow");
+    arrow.addEventListener("click", function() {
+        var aboutMeSection = document.getElementById("AboutMe");
+        aboutMeSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function showSection(sectionId) {
+        var sections = document.querySelectorAll('section[id$="Section"]');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        var selectedSection = document.getElementById(sectionId + 'Section');
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+        }
+    }
+    
+    showSection("education");
 </script>
 </html>
