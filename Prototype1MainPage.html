@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Navigator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="icon" type="png" href="Christou.png">
+  <!-- Personal CSS -->
+	<link rel="stylesheet" href="StyleAndFormatting.css">
+  <!-- TailWind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <header class="relative fixed">
+    <!-- Header Section -->
+    <div class="w-full px-3 py-2 text-bg-dark border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+          <div class="col-2"></div>
+
+          <div class="col-8 col-lg px-3 flex justify-content-center">
+            <input id="Search" type="text" class="form-control w-9/12 " placeholder="Search by website name / URL"
+              aria-label="Search" aria-describedby="addon-wrapping">
+          </div>
+
+          <!-- here -->
+          <ul class="nav col-2 col-lg-auto my-md-0 text-small">
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#account"></use>
+                </svg>
+                Account
+              </a>
+            </li>
+            <li>
+              <a href="LoginPage.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="LoginPage.html"></use>
+                </svg>
+                Log Out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="w-full container-fluid px-5 py-4 row">
+      <h1 class="mb-2 ml-4 text-2xl">Filter By:</h1>
+      <div class="col-md-10 gap-3 flex justify-start">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle filterDropdown" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Regime
+            </button>
+            <div class="dropdown-menu" aria-labelledby="filterDropdown">
+              <a class="dropdown-item" href="#">Afghanistan</a>
+              <a class="dropdown-item" href="#">Anti-Corruption (Other)</a>
+              <a class="dropdown-item" href="#">Belarus (Other Sanctions)</a>
+              <a class="dropdown-item" href="#">Bosnia and Herzegovina (Other Sanctions)</a>
+              <a class="dropdown-item" href="#">Bosnia and Herzegovina (Other Sanctions)</a>
+              <a class="dropdown-item" href="#">Central African Republic</a>
+              <a class="dropdown-item" href="#">Cuba</a>
+              <a class="dropdown-item" href="#">More Options...</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle filterDropdown" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Source
+            </button>
+            <div class="dropdown-menu" aria-labelledby="filterDropdown">
+              <a class="dropdown-item" href="#">UK Parliament</a>
+              <a class="dropdown-item" href="#">OFSI</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle filterDropdown" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Implementing Juristiction
+            </button>
+            <div class="dropdown-menu" aria-labelledby="filterDropdown">
+              <a class="dropdown-item" href="#">United Kingdom</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-2">
+        <!-- <button type="button" class="btn btn-primary float-right mainButton">Add New Website</button> -->
+        <button type="button" data-toggle="modal" class="btn-primary btn mainButton float-right flex items-center" data-target="#newTopicModal">
+          <span class="material-symbols-outlined pr-3" style="font-size: 20px;">add</span>
+          Add New Website
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <div class="px-5 pt-4 mb-2 border rounded-3"
+    style="overflow-y: scroll; overflow-x: hidden; width: 100%; height: auto; background-color: #EDECEA" id="mydiv">
+    <!-- Different Webpages -->
+  </div>
+</body>
+</main>
+
+
+<!-- Modal EDIT Website -->
+<div class="modal fade" id="edittopicmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Website</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title-name" class="col-form-label">URL Title:</label>
+            <input type="text" name="title-name" class="form-control"
+              style="border-radius: 5px; background: #EDECEA; height: auto;" id="title-name">
+
+            <label for="url-name" class="col-form-label">Category of URL:</label>
+            <input type="text" name="url-name" class="form-control"
+              style="border-radius: 5px; background: #EDECEA; height: auto;" id="url-name">
+
+            <div class="row mx-0">
+              <label for="category-name" class="col-form-label">Enter URL</label>
+              <input type="text" id="urlInput" class="form-control col-6 "
+                style="border-radius: 5px; background: #EDECEA; width: 80%;" id="category-name">
+              <button type="button" id="openTabButton" class="btn col-6"
+                style="width: 20%; background-color:#4AA3CA;">
+
+                <div class="row" style="color:white;font-size:15px;">
+                  <div class="col-8">Search</div>
+                  <span class="material-symbols-outlined col-2" style="font-size:18px;">
+                    search
+                  </span>
+                </div>
+
+              </button>
+            </div>
+
+            <label for="email-name" class="col-form-label">Email</label>
+            <input type="text" name="inputPassword" class="form-control"
+              style="border-radius: 5px; background: #EDECEA; height: auto;" id="email-name">
+
+            <div class="modal-footer">
+              <button type="button" class="btn" style="width: auto; background-color:#DA7777;"
+                data-dismiss="modal">Close</button>
+              <button type="Submit" class="btn postButton" style="width: 15%; background-color:#77DAA9;"
+                data-dismiss="modal">Add new</button>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+    </div>
+</div>
+
+<!-- Modal ADD NEW Website -->
+<div class="modal fade" id="newTopicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title text-4xl py-3">Add New Website</p>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row px-5">
+            <div class="col-6 pb-5">
+              <label for="title-name" class="col-form-label">Source Document Title:</label>
+              <input type="username" name="username" class="form-control editInputs" id="inlineFormInputGroup" placeholder="Enter Source Document Title">
+
+              <label for="url-name" class="col-form-label pt-3">URL:</label>
+              <input type="text" name="url-name" class="form-control editInputs" id="url-name" placeholder="Enter URL">
+              <!-- <button type="button" id="openTabButton" class="btn col-6"
+                style="width: 20%; background-color:#4AA3CA;">
+
+                <div class="row" style="color:white;font-size:15px;">
+                  <div class="col-8">Search</div>
+                  <span class="material-symbols-outlined col-2" style="font-size:18px;">
+                    search
+                  </span>
+                </div>
+
+              </button> -->
+
+
+              <label for="category-name" class="col-form-label pt-3">Select Regime:</label>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle editInputs" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Regime"></button>
+                <div class="dropdown-menu" aria-labelledby="filterDropdown">
+                  <a class="dropdown-item" href="#">Afghanistan</a>
+                  <a class="dropdown-item" href="#">Anti-Corruption (Other)</a>
+                  <a class="dropdown-item" href="#">Belarus (Other Sanctions)</a>
+                  <a class="dropdown-item" href="#">Bosnia and Herzegovina (Other Sanctions)</a>
+                  <a class="dropdown-item" href="#">Bosnia and Herzegovina (Other Sanctions)</a>
+                  <a class="dropdown-item" href="#">Central African Republic</a>
+                  <a class="dropdown-item" href="#">Cuba</a>
+                  <a class="dropdown-item" href="#">More Options...</a>
+                </div>
+              </div>
+              <label for="category-name" class="col-form-label pt-3">Select Source:</label>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle editInputs" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="filterDropdown">
+                  <a class="dropdown-item" href="#">UK Parliament</a>
+                  <a class="dropdown-item" href="#">OFSI</a>
+                </div>
+              </div>
+              <label for="category-name" class="col-form-label pt-3">Select Juristiction:</label>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle editInputs" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="filterDropdown">
+                  <a class="dropdown-item" href="#">United Kingdom</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <label for="email-name" class="col-form-label">Email List:</label>
+              <input type="text" name="inputemaillist" class="form-control editInputs" id="email-name" placeholder="Enter Email Recipient">
+              <input type="text" name="emaillist" class="form-control editInputs h-3/4 my-3 text-center" id="email-list" placeholder="Empty Email List">
+            </div>
+          </div>
+
+          <div class="modal-footer py-3">
+            <button type="Submit" class="btn postButton mainInputButton text-2xl" data-dismiss="modal">Add new</button>
+            <button type="button" class="btn mainButton text-2xl"  data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+<script>
+  function displaytext(divToOpen) {
+    var x = document.getElementById(divToOpen);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  document.getElementById('openTabButton').addEventListener('click', function () {
+    var urlInput = document.getElementById('urlInput').value;
+    if (urlInput.trim() !== '') {
+      window.open(urlInput, '_blank');
+    } else {
+      alert('Please enter a valid URL');
+    }
+  });
+
+  function Websiteaddition(nameandemail, websitename, websiteaddress, regimename , sourcename , implementingjurisname) {
+
+//var nameandemails = ["Thomas Christou,thomasegchristou@icloud.com", "Giles Christou,giles@icloud.com", "Teresa Christou,thefamilychristou@icloud.com", "Chris Christou,Chrischristou@icloud.com",];
+var emaillistnames = ``;
+console.log(regimename);
+
+for (var nameandemail of nameandemail) {
+  var stringArray = nameandemail.split(',');
+
+  var htmladdition = ""; //email list html (removed in this section)
+  emaillistnames += htmladdition;
+}
+var todaysDate = new Date();
+    var formattedDate = todaysDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+var htmlCode = `
+    <div class="websiteSection border text">
+
+        <div class="row">
+            <div class="col-6">
+              <div class="row">
+                <p class="websiteTitle"><a href="#" style="font-size:small">` + websitename + `</a></p> 
+              </div>
+              <div class="row">
+                <p class="websiteLink"><a href="`+ websiteaddress + `">` + websiteaddress + `</a></p>
+              </div>
+            </div>
+            
+            <div class="col-6 row">
+              <div class="col-4">
+                <div class="postButton p-2 w-full" style="background-color: `+ stringToColor(regimename) + `; text-align: center; border-radius: 5px; 
+                    color:`+ returnblackorwhite(stringToColor(regimename)) + `" data-dismiss="modal">
+                    `+ regimename + `
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="postButton p-2 w-full" style="background-color: `+ stringToColor(sourcename) + `; text-align: center; border-radius: 5px; 
+                    color:`+ returnblackorwhite(stringToColor(sourcename)) + `" data-dismiss="modal">
+                    `+ sourcename + `
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="postButton p-2 w-full" style="background-color: `+ stringToColor(implementingjurisname) + `; text-align: center; border-radius: 5px; 
+                    color:`+ returnblackorwhite(stringToColor(implementingjurisname)) + `" data-dismiss="modal">
+                    `+ implementingjurisname + `
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                    <p class="">Date: `+ formattedDate +`</p>
+                  </div>
+                </div>
+        </div>
+    </div>
+  `;
+
+// Commented out section for now
+
+//    <input id="Search" type="text" class="form-control" placeholder="Search" aria-label="Search"
+//      aria-describedby="addon-wrapping">
+// <button type="button" data-toggle="modal" class="px-2 btn" data-target="#edittopicmodal" style="border-color: #515151; background-color: #FFFFFF; width: 100%; border-style: solid;" >
+//     Edit
+//     <span class="material-symbols-outlined" style="font-size: 10px;">edit</span>
+// </button>
+
+
+var myDiv = document.getElementById('mydiv');
+myDiv.innerHTML += htmlCode;
+}
+//var nameandemails = ["Thomas Christou,thomasegchristou@icloud.com", "Giles Christou,giles@icloud.com", "Teresa Christou,thefamilychristou@icloud.com", "Chris Christou,Chrischristou@icloud.com",];
+//var allwebsitenames = ['Thomas Christou Website,https://thomaschristou.github.io/thomaschristou//Personal%20Website.html',]
+
+function stringToColor(stringname) {
+var hash = 0;
+for (var i = 0; i < stringname.length; i++) {
+  hash = stringname.charCodeAt(i) + ((hash << 5) - hash);
+}
+var color = '#';
+for (var j = 0; j < 3; j++) {
+  var value = (hash >> (j * 8)) & 255;
+  color += ('00' + value.toString(16)).substr(-2);
+}
+return color;
+}
+
+function addallwebsites(allwebsitenames) {
+var myDiv = document.getElementById('mydiv');
+myDiv.innerHTML = "";
+for (var websitename of allwebsitenames) {
+  // get nameandemail variable list for now its just hardcoded
+  var nameandemails = ["English Juristiction,thomasegchristou@icloud.com", "German Juristiction,giles@icloud.com", "EU Juristiction,giles@icloud.com", "Spanish Juristiction,giles@icloud.com"];
+
+  var stringArray = websitename.split(',');
+  Websiteaddition(nameandemails, stringArray[0], stringArray[1], stringArray[2], stringArray[3],stringArray[4]);
+}
+}
+function returnblackorwhite(colour) {
+var removehash = colour.replace(/^#/, '');
+var number = parseInt(removehash, 16);
+if (number > 8388607.5) {
+  return "black";
+} else {
+  return "white";
+}
+}
+//addallwebsites(allwebsitenames);
+var allwebsitenames = [
+'The Afghanistan (Sanctions) (EU Exit) Regulations 2020 ,https://www.legislation.gov.uk/uksi/2020/948/contents,Afghanistan,UK Parliament,United Kingdom',
+'The Global Anti-Corruption Sanctions Regulations 2021,https://www.legislation.gov.uk/uksi/2021/488/made,Anti-Corruption (Other),UK Parliament,United Kingdom',
+'The Republic of Belarus (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/600/introduction,Belarus (Other Sanctions),UK Parliament,United Kingdom',
+'The Bosnia and Herzegovina (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/608/contents,Bosnia and Herzegovina (Other Sanctions),UK Parliament,United Kingdom',
+'The Burundi (Sanctions) (EU Exit) Regulations 2019 ,https://www.legislation.gov.uk/uksi/2019/1142/contents/made,Burundi (Other Sanctions),UK Parliament,United Kingdom',
+'The Central African Republic (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/616/contents,Central African Republic ,UK Parliament,United Kingdom',
+'Central African Republic Designated Persons,https://www.gov.uk/government/publications/financial-sanctions-central-african-republic,Central African Republic ,UK Parliament,United Kingdom',
+'The Extraterritorial US Legislation (Sanctions against Cuba, Iran and Libya) (Protection of Trading Interests) Order 1996 (S.I. 1996 No. 3171),https://www.legislation.gov.uk/uksi/1996/3171/contents/made,Cuba,UK Parliament,United Kingdom',
+'The Cyber (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/597/contents/made,Cyber (Other Sanctions),UK Parliament,United Kingdom',
+'The Democratic Republic of the Congo (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/433/contents,Democratic Republic of the Congo,UK Parliament,United Kingdom',
+'2020 No. 680 The Global Human Rights Sanctions Regulations 2020,https://www.legislation.gov.uk/uksi/2020/680/introduction/made,Global Human Rights Sanctions Regulations (Other Sanctions),UK Parliament,United Kingdom',
+'The Guinea (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/1145/contents,Guinea (Other Sanctions),UK Parliament,United Kingdom',
+'The Republic of Guinea-Bissau (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/554/introduction,Guinea-Bissau,UK Parliament,United Kingdom',
+'The Iran (Sanctions) (Human Rights) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/134/contents/made,Iran,UK Parliament,United Kingdom',
+'The Iran (Sanctions) Regulations 2023,https://www.legislation.gov.uk/uksi/2023/1314/contents,Iran,UK Parliament,United Kingdom',
+'The Iran (Sanctions) (Nuclear) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/461/contents,Iran,UK Parliament,United Kingdom',
+'The Extraterritorial US Legislation (Sanctions against Cuba, Iran and Libya) (Protection of Trading Interests) Order 1996 (S.I. 1996 No. 3171) of 28th January 1997,https://www.legislation.gov.uk/uksi/1996/3171/made,Iran,UK Parliament,United Kingdom',
+'The Iraq (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/707/contents/made,Iraq,UK Parliament,United Kingdom',
+'The Lebanon (Sanctions) (Assassination of Rafiq Hariri and others) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/617/contents,Lebanon,UK Parliament,United Kingdom',
+'The Lebanon (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/612/contents,Lebanon,UK Parliament,United Kingdom',
+'The Libya (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/1665/contents,Libya,UK Parliament,United Kingdom',
+'The Extraterritorial US Legislation (Sanctions against Cuba, Iran and Libya) (Protection of Trading Interests) Order 1996 (S.I. 1996 No. 3171) of 28th January 1997,https://www.legislation.gov.uk/uksi/1996/3171/made,Libya,UK Parliament,United Kingdom',
+'Libya Designated List,https://www.gov.uk/government/publications/financial-sanctions-libya,Libya,UK Parliament,United Kingdom',
+'The Mali (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/705/contents/made,Mali (Other Sanctions),UK Parliament,United Kingdom',
+'The Myanmar (Sanctions) Regulations 2021,https://www.legislation.gov.uk/uksi/2021/496/contents/,Myanmar,UK Parliament,United Kingdom',
+'The Democratic People’s Republic of Korea (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/411/contents,North Korea,UK Parliament,United Kingdom',
+'The Nicaragua (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/610/contents,Nicaragua (Other Sanctions),UK Parliament,United Kingdom',
+'The Russia (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/855/contents,Russia,UK Parliament,United Kingdom',
+'The Somalia (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/642/contents/made,Somalia,UK Parliament,United Kingdom',
+'The South Sudan (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/438/contents,South Sudan,UK Parliament,United Kingdom',
+'The Sudan (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/753/contents/made,Sudan,UK Parliament,United Kingdom',
+'The Syria (United Nations Sanctions) (Cultural Property) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/1233/contents/made,Syria,UK Parliament,United Kingdom',
+'The Syria (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/792/contents,Syria,UK Parliament,United Kingdom',
+'The Chemical Weapons (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/618/contents,Terrorism (Other Sanctions),UK Parliament,United Kingdom',
+'The ISIL (Da’esh) and Al-Qaida (United Nations Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/466,Terrorism (Other Sanctions),UK Parliament,United Kingdom',
+'Terrorism and terrorist financing designated persons:,https://www.gov.uk/government/publications/current-list-of-designated-persons-terrorism-and-terrorist-financing,Terrorism (Other Sanctions),UK Parliament,United Kingdom',
+'The Unauthorised Drilling Activities in the Eastern Mediterranean (Sanctions) (EU Exit) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/1474/contents,Unauthorised Drilling (Other Sanctions),UK Parliament,United Kingdom',
+'The Venezuela (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/135/contents/made,Venezuela,UK Parliament,United Kingdom',
+'Venezuela Designated List,https://www.gov.uk/government/publications/financial-sanctions-venezuela,Venezuela,UK Parliament,United Kingdom',
+'The Yemen (Sanctions) (EU Exit) (No. 2) Regulations 2020,https://www.legislation.gov.uk/uksi/2020/1278/contents/made,Yemen,UK Parliament,United Kingdom',
+'The Zimbabwe (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/604/contents,Zimbabwe,UK Parliament,United Kingdom',
+'The Counter-Terrorism (Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/577/contents,Terrorism (Other Sanctions),UK Parliament,United Kingdom',
+'The Counter-Terrorism (International Sanctions) (EU Exit) Regulations 2019,https://www.legislation.gov.uk/uksi/2019/573/contents,Terrorism (Other Sanctions),UK Parliament,United Kingdom',
+'Monetary penalties for breaches of financial sanctions: guidance,https://www.gov.uk/government/publications/monetary-penalties-for-breaches-of-financial-sanctions#full-publication-update-history,Other,HM Treasury,United Kingdom',
+'Russia Guidance - Guidance for the financial and investment restrictions in Russia (Sanctions) (EU Exit) Regulations 2019,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1058961/Russia_guidance_04.03.22_.pdf,Russia,OFSI,United Kingdom',
+'Libya Guidance: financial sanctions guidance for the Libya (Sanctions) (EU Exit) Regulations 2020 ,https://assets.publishing.service.gov.uk/media/65cb9dce39a8a7000c60d4d8/Libya_guidance_September_2022.pdf,Other,OFSI,United Kingdom',
+'UK Maritime Services Prohibition and Oil Price Cap Guidance,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1126108/Russian_Oil_Services_Ban_-_HMT_Industry_Guidance.pdf,Russia,OFSI,United Kingdom',
+'General Licence - Oil Price Cap,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1121742/2469656_OFSI_OPC_GL.pdf,Russia,OFSI,United Kingdom',
+'The Haiti (Sanctions) Regulations 2022,https://www.legislation.gov.uk/uksi/2022/1281/made,Haiti,UK Parliament,United Kingdom',
+'GENERAL LICENCE – INT/2022/1280976  Russia: Regulatory Authorities – Prudential Supervision or Financial Stability / Protection of Consumers Or Integrity of The UK Financial System, https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1150373/INT20221280976_010322.pdf,Russia,OFSI,United Kingdom',
+'General licence - INT/2023/3024200,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1158377/INT_2023_3024200_Publication_Notice.pdf,Belarus,OFSI,United Kingdom',
+'GENERAL LICENCE – Correspondent Banking Payments INT/2023/3566356,https://assets.publishing.service.gov.uk/media/6516eed66dfda6000d8e3906/Correspondent_Banking_General_Licence.pdf,Russia,OFSI,United Kingdom',
+'GENERAL LICENCE- INT/2024/4398024 Court Funds Office Payments,https://www.gov.uk/government/collections/ofsi-general-licences,Russia,OFSI,United Kingdom'];
+allwebsitenames = allwebsitenames.sort();
+const searchinput = document.getElementById('Search').addEventListener("input", e => {
+const value = e.target.value;
+console.log(value);
+var searchedwebsites = [];
+for (var website of allwebsitenames) {
+  if (website.includes(value)) {
+    searchedwebsites.push(website);
+  }
+}
+
+ addallwebsites(searchedwebsites);
+})
+
+document.getElementById('')
+addallwebsites(allwebsitenames);
+</script>
+
+</html>
